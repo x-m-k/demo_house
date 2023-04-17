@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MyBatisCodeHelperDatasource">
+    <option name="projectProfile">
+      <ProjectProfile>
+        <option name="addSerializeUid" value="true" />
+        <option name="controllerTemplateString" value="&#10;#* @vtlvariable name=&quot;tableName&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;entityPackageName&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;entityClassName&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;servicePackageName&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;serviceInterfacePackage&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;serviceClassName&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;serviceInterfaceClassName&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;mapperPackageName&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;mapperClassName&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;controllerPackage&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;tableRemark&quot; type=&quot;java.lang.String&quot; *#&#10;#* @vtlvariable name=&quot;myDate&quot; type=&quot;java.util.Date&quot; *#&#10;#* @vtlvariable name=&quot;simpleDateFormat&quot; type=&quot;java.text.SimpleDateFormat&quot; *#&#10;package $!{controllerPackage};&#10;import $!{entityPackageName}.$!{entityClassName};&#10;#set($realServiceName = $!{serviceClassName}+'Impl')&#10;import $!{servicePackageName}.$!{realServiceName};&#10;import org.springframework.web.bind.annotation.*;&#10;&#10;#set($serviceFirstLower = $!{serviceClassName.substring(0,1).toLowerCase()}+$!{serviceClassName.substring(1,$!{serviceClassName.length()})})&#10;import javax.annotation.Resource;&#10;&#10;/**&#10;* $!{info.tableRemarks}($!{tableName})表控制层&#10;*&#10;* @author xxxxx&#10;*/&#10;@RestController&#10;@RequestMapping(&quot;/$!{tableName}&quot;)&#10;public class $!{entityClassName}Controller {&#10;/**&#10;* 服务对象&#10;*/&#10;@Resource&#10;private $!{serviceClassName} $!{serviceFirstLower};&#10;&#10;/**&#10;* 通过主键查询单条数据&#10;*&#10;* @param id 主键&#10;* @return 单条数据&#10;*/&#10;@GetMapping(&quot;selectOne&quot;)&#10;public $!{entityClassName} selectOne(Integer id) {&#10;return $!{serviceFirstLower}.selectByPrimaryKey(id);&#10;}&#10;&#10;}" />
+        <option name="generateService" value="true" />
+        <option name="javaMapperPackage" value="com.example.dao" />
+        <option name="javaMapperPath" value="$PROJECT_DIR$/mall-demo/mall-dao/src/main/java" />
+        <option name="javaModelPackage" value="com.example.model" />
+        <option name="javaModelPath" value="$PROJECT_DIR$/mall-demo/mall-model/src/main/java" />
+        <option name="lastDatabaseCrudChooseModuleName" value="mall-model" />
+        <option name="lombokAllArgConstructor" value="true" />
+        <option name="lombokDataAnnotation" value="true" />
+        <option name="lombokNoArgsConstructor" value="true" />
+        <option name="mapperAnnotaion" value="true" />
+        <option name="modelAddToString" value="true" />
+        <option name="moduleNameToPackageAndPathMap">
+          <map>
+            <entry key="mall-controller">
+              <value>
+                <UserPackageAndPathInfoByModule>
+                  <option name="javaMapperPackage" value="com.example.dao" />
+                  <option name="javaMapperPath" value="$PROJECT_DIR$/mall-demo/mall-controller/src/main/java" />
+                  <option name="javaModelPacakge" value="com.example.model" />
+                  <option name="javaModelPath" value="$PROJECT_DIR$/mall-demo/mall-controller/src/main/java" />
+                  <option name="javaServiceInterfacePath" value="$PROJECT_DIR$/mall-demo/mall-controller/src/main/java" />
+                  <option name="javaServicePackage" value="com.example.service" />
+                  <option name="javaServicePath" value="$PROJECT_DIR$/mall-demo/mall-controller/src/main/java" />
+                  <option name="xmlPackage" value="com.example.dao" />
+                  <option name="xmlPath" value="$PROJECT_DIR$/mall-demo/mall-dao/src/main/resources" />
+                </UserPackageAndPathInfoByModule>
+              </value>
+            </entry>
+            <entry key="mall-model">
+              <value>
+                <UserPackageAndPathInfoByModule>
+                  <option name="javaMapperPackage" value="com.example.dao" />
+                  <option name="javaMapperPath" value="$PROJECT_DIR$/mall-demo/mall-dao/src/main/java" />
+                  <option name="javaModelPacakge" value="com.example.model" />
+                  <option name="javaModelPath" value="$PROJECT_DIR$/mall-demo/mall-model/src/main/java" />
+                  <option name="javaServiceInterfacePath" value="$PROJECT_DIR$/mall-demo/mall-model/src/main/java" />
+                  <option name="javaServicePackage" value="com.example.service" />
+                  <option name="javaServicePath" value="$PROJECT_DIR$/mall-demo/mall-service/src/main/java" />
+                  <option name="xmlPackage" value="com.example.dao" />
+                  <option name="xmlPath" value="$PROJECT_DIR$/mall-demo/mall-dao/src/main/resources" />
+                </UserPackageAndPathInfoByModule>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="p3CComment" value="true" />
+        <option name="tableGenerateConfigs">
+          <map>
+            <entry key="mall:cms_help">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="CmsHelp" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:cms_help_category">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="CmsHelpCategory" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:cms_member_report">
+              <value>
+                <TableGenerateConfig>
+                  <option name="javaModelName" value="CmsMemberReport" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:cms_prefrence_area">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="CmsPrefrenceArea" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:cms_prefrence_area_product_relation">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="CmsPrefrenceAreaProductRelation" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:cms_subject">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="CmsSubject" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:cms_subject_category">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="CmsSubjectCategory" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:cms_subject_comment">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="CmsSubjectComment" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:cms_subject_product_relation">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="CmsSubjectProductRelation" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:cms_topic">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="CmsTopic" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:cms_topic_category">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="CmsTopicCategory" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:cms_topic_comment">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="CmsTopicComment" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:oms_cart_item">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="OmsCartItem" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:oms_company_address">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="OmsCompanyAddress" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:oms_order">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="OmsOrder" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:oms_order_item">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="OmsOrderItem" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:oms_order_operate_history">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="OmsOrderOperateHistory" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:oms_order_return_apply">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="OmsOrderReturnApply" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:oms_order_return_reason">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="OmsOrderReturnReason" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:oms_order_setting">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="OmsOrderSetting" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:pms_album">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PmsAlbum" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:pms_album_pic">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PmsAlbumPic" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:pms_brand">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PmsBrand" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:pms_comment">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PmsComment" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:pms_comment_replay">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PmsCommentReplay" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:pms_feight_template">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PmsFeightTemplate" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:pms_member_price">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PmsMemberPrice" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:pms_product">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PmsProduct" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:pms_product_attribute">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PmsProductAttribute" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:pms_product_attribute_category">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PmsProductAttributeCategory" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:pms_product_attribute_value">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PmsProductAttributeValue" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:pms_product_category">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PmsProductCategory" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:pms_product_category_attribute_relation">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PmsProductCategoryAttributeRelation" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:pms_product_full_reduction">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PmsProductFullReduction" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:pms_product_ladder">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PmsProductLadder" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:pms_product_operate_log">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PmsProductOperateLog" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:pms_product_vertify_record">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PmsProductVertifyRecord" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:pms_sku_stock">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="PmsSkuStock" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:sms_coupon">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="SmsCoupon" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:sms_coupon_history">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="SmsCouponHistory" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:sms_coupon_product_category_relation">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="SmsCouponProductCategoryRelation" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:sms_coupon_product_relation">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="SmsCouponProductRelation" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:sms_flash_promotion">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="SmsFlashPromotion" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:sms_flash_promotion_log">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="SmsFlashPromotionLog" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:sms_flash_promotion_product_relation">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="SmsFlashPromotionProductRelation" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:sms_flash_promotion_session">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="SmsFlashPromotionSession" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:sms_home_advertise">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="SmsHomeAdvertise" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:sms_home_brand">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="SmsHomeBrand" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:sms_home_new_product">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="SmsHomeNewProduct" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:sms_home_recommend_product">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="SmsHomeRecommendProduct" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:sms_home_recommend_subject">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="SmsHomeRecommendSubject" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_admin">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsAdmin" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_admin_login_log">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsAdminLoginLog" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_admin_permission_relation">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsAdminPermissionRelation" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_admin_role_relation">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsAdminRoleRelation" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_growth_change_history">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsGrowthChangeHistory" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_integration_change_history">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsIntegrationChangeHistory" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_integration_consume_setting">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsIntegrationConsumeSetting" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_member">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsMember" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_member_level">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsMemberLevel" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_member_login_log">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsMemberLoginLog" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_member_member_tag_relation">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsMemberMemberTagRelation" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_member_product_category_relation">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsMemberProductCategoryRelation" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_member_receive_address">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsMemberReceiveAddress" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_member_rule_setting">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsMemberRuleSetting" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_member_statistics_info">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsMemberStatisticsInfo" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_member_tag">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsMemberTag" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_member_task">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsMemberTask" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_menu">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsMenu" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_permission">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsPermission" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_resource">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsResource" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_resource_category">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsResourceCategory" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_role">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsRole" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_role_menu_relation">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsRoleMenuRelation" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_role_permission_relation">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsRolePermissionRelation" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+            <entry key="mall:ums_role_resource_relation">
+              <value>
+                <TableGenerateConfig>
+                  <option name="generatedKey" value="id" />
+                  <option name="javaModelName" value="UmsRoleResourceRelation" />
+                  <option name="moduleName" value="mall-model" />
+                  <option name="useActualColumnName" value="false" />
+                </TableGenerateConfig>
+              </value>
+            </entry>
+          </map>
+        </option>
+        <option name="useSwagger" value="true" />
+        <option name="xmlMapperPackage" value="com.example.dao" />
+        <option name="xmlMapperPath" value="$PROJECT_DIR$/mall-demo/mall-dao/src/main/resources" />
+      </ProjectProfile>
+    </option>
+  </component>
+</project>
