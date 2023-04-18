@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ca143e9-d3ca-43cc-8696-fab5c1434533" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="2ca143e9-d3ca-43cc-8696-fab5c1434533" name="变更" comment="完成商品、商品分类、品牌接口">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-controller/mall-controller.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-dao/mall-dao.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-model/mall-model.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mall-service/mall-service.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,15 +26,10 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="C:\Users\xmk\Desktop\apache-tomcat-9.0.70-windows-x64\apache-maven-3.8.1\conf\pre" />
-        <option name="mavenHome" value="$PROJECT_DIR$/../../../apache-tomcat-9.0.70-windows-x64/apache-maven-3.8.1" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-tomcat-9.0.70-windows-x64/apache-maven-3.8.1" />
         <option name="useMavenConfig" value="true" />
         <option name="userSettingsFile" value="C:\Users\xmk\Desktop\apache-tomcat-9.0.70-windows-x64\apache-maven-3.8.1\conf\settings.xml" />
       </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectId" id="2OXgUhfvQGdO7t1tp8aYQ8U10Vj" />
@@ -43,7 +42,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/xmk/Desktop/mall-master",
+    "last_opened_file_path": "C:/Users/xmk/Desktop/demo_house/mall-demo",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -51,9 +50,19 @@
     "project.structure.last.edited": "模块",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "spring.configuration.checksum": "f64810d298ef65e5e9df3e3be311b31b",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="mall_demoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="mall-controller" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.mall_demoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -63,10 +72,15 @@
       <option name="presentableId" value="Default" />
       <updated>1681712362149</updated>
       <workItem from="1681712364538" duration="3776000" />
+      <workItem from="1681831096391" duration="298000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="完成商品、商品分类、品牌接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成商品、商品分类、品牌接口" />
   </component>
 </project>
