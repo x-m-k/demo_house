@@ -2,6 +2,9 @@ package com.example.mapper;
 
 import com.example.model.PmsProductAttributeCategory;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 @Mapper
 public interface PmsProductAttributeCategoryMapper {
@@ -11,6 +14,13 @@ public interface PmsProductAttributeCategoryMapper {
      * @return deleteCount
      */
     int deleteByPrimaryKey(Long id);
+
+    /**
+     * 根据id 批量删除
+     * @param ids
+     * @return
+     */
+    int delete_batch(@Param("ids")List ids);
 
     /**
      * insert record to table
@@ -33,9 +43,12 @@ public interface PmsProductAttributeCategoryMapper {
      */
     PmsProductAttributeCategory selectByPrimaryKey(Long id);
 
+
+    List<PmsProductAttributeCategory> findByCondition(PmsProductAttributeCategory pmsProductAttributeCategory);
+
     /**
      * update record selective
-     * @param record the updated record
+     * @param record the updated recordd
      * @return update count
      */
     int updateByPrimaryKeySelective(PmsProductAttributeCategory record);
@@ -46,4 +59,9 @@ public interface PmsProductAttributeCategoryMapper {
      * @return update count
      */
     int updateByPrimaryKey(PmsProductAttributeCategory record);
+
+
+
+
+
 }

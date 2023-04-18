@@ -1,7 +1,11 @@
 package com.example.mapper;
 
 import com.example.model.PmsProductCategory;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.github.pagehelper.PageInfo;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 @Mapper
 public interface PmsProductCategoryMapper {
@@ -46,4 +50,11 @@ public interface PmsProductCategoryMapper {
      * @return update count
      */
     int updateByPrimaryKey(PmsProductCategory record);
+
+
+    //根据实体类pmsProductCategory的任意属性查询数据
+    public List<PmsProductCategory> findByCondition(PmsProductCategory pmsProductCategory) throws JsonProcessingException;
+
+
+
 }

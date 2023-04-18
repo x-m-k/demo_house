@@ -21,6 +21,7 @@
     id, `name`, first_letter, sort, factory_status, show_status, product_count, product_comment_count, 
     logo, big_pic, brand_story
   </sql>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
     select 
@@ -28,6 +29,48 @@
     from pms_brand
     where id = #{id,jdbcType=BIGINT}
   </select>
+
+  <select id="findByCondition" parameterType="java.lang.Long" resultMap="BaseResultMap">
+      <!--@mbg.generated-->
+      select
+      <include refid="Base_Column_List"/>
+      from pms_brand
+      where 1=1
+      <if test="id != null">
+          AND id = #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+          AND `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="firstLetter != null">
+          AND first_letter = #{firstLetter,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+          AND sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="factoryStatus != null">
+          AND factory_status = #{factoryStatus,jdbcType=INTEGER},
+      </if>
+      <if test="showStatus != null">
+          AND show_status = #{showStatus,jdbcType=INTEGER},
+      </if>
+      <if test="productCount != null">
+          AND product_count = #{productCount,jdbcType=INTEGER},
+      </if>
+      <if test="productCommentCount != null">
+          AND product_comment_count = #{productCommentCount,jdbcType=INTEGER},
+      </if>
+      <if test="logo != null">
+          AND logo = #{logo,jdbcType=VARCHAR},
+      </if>
+      <if test="bigPic != null">
+          AND big_pic = #{bigPic,jdbcType=VARCHAR},
+      </if>
+      <if test="brandStory != null">
+          AND brand_story = #{brandStory,jdbcType=LONGVARCHAR},
+      </if>
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     <!--@mbg.generated-->
     delete from pms_brand
@@ -112,6 +155,31 @@
       </if>
     </trim>
   </insert>
+
+
+  <update id="updateShowStatus_bacth">
+      <!--@mbg.generated-->
+      update pms_brand
+      set
+      show_status = #{showStatus,jdbcType=INTEGER},
+      where id in
+      <foreach collection="ids" index="index" item="id" open="(" close=")" separator=",">
+          #{id}
+      </foreach>
+  </update>
+
+  <update id="updateFactoryStatus_bacth">
+    <!--@mbg.generated-->
+    update pms_brand
+    set
+    factory_status = #{factoryStatus,jdbcType=INTEGER},
+    where id in
+    <foreach collection="ids" index="index" item="id" open="(" close=")" separator=",">
+      #{id}
+    </foreach>
+  </update>
+
+
   <update id="updateByPrimaryKeySelective" parameterType="com.example.model.PmsBrand">
     <!--@mbg.generated-->
     update pms_brand

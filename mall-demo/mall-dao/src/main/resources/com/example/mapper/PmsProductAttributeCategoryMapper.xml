@@ -20,11 +20,46 @@
     from pms_product_attribute_category
     where id = #{id,jdbcType=BIGINT}
   </select>
+
+
+  <select id="findByCondition" resultMap="BaseResultMap">
+      <!--@mbg.generated-->
+      select
+      <include refid="Base_Column_List"/>
+      from pms_product_attribute_category
+      where 1=1
+      <if test="id != null">
+          AND `id` = #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+          AND `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="attributeCount != null">
+          AND attribute_count = #{attributeCount,jdbcType=INTEGER},
+      </if>
+      <if test="paramCount != null">
+          AND param_count = #{paramCount,jdbcType=INTEGER}
+      </if>
+  </select>
+
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     <!--@mbg.generated-->
     delete from pms_product_attribute_category
     where id = #{id,jdbcType=BIGINT}
   </delete>
+
+
+  <delete id="delete_batch" parameterType="java.lang.Long">
+      <!--@mbg.generated-->
+      delete from pms_product_attribute_category
+      where id in
+      <foreach collection="ids" separator="," close=")" open="(" item="id" index="index">
+          #{id}
+      </foreach>
+  </delete>
+
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.model.PmsProductAttributeCategory" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into pms_product_attribute_category (`name`, attribute_count, param_count

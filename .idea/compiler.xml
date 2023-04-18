@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -13,11 +14,11 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="mall-controller" target="11" />
-      <module name="mall-dao" target="11" />
-      <module name="mall-demo" target="11" />
-      <module name="mall-model" target="11" />
-      <module name="mall-service" target="11" />
+      <module name="mall-controller" target="1.8" />
+      <module name="mall-dao" target="1.8" />
+      <module name="mall-demo" target="1.8" />
+      <module name="mall-model" target="1.8" />
+      <module name="mall-service" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

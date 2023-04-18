@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: javax.cache:cache-api:1.1.1">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../maven/mvnrepo/javax/cache/cache-api/1.1.1/cache-api-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../apache-tomcat-9.0.70-windows-x64/apache-maven-3.8.1/conf/pre/javax/cache/cache-api/1.1.1/cache-api-1.1.1.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$PROJECT_DIR$/../../maven/mvnrepo/javax/cache/cache-api/1.1.1/cache-api-1.1.1-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../apache-tomcat-9.0.70-windows-x64/apache-maven-3.8.1/conf/pre/javax/cache/cache-api/1.1.1/cache-api-1.1.1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../maven/mvnrepo/javax/cache/cache-api/1.1.1/cache-api-1.1.1-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../apache-tomcat-9.0.70-windows-x64/apache-maven-3.8.1/conf/pre/javax/cache/cache-api/1.1.1/cache-api-1.1.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

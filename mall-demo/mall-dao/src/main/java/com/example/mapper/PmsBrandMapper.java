@@ -2,6 +2,9 @@ package com.example.mapper;
 
 import com.example.model.PmsBrand;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 @Mapper
 public interface PmsBrandMapper {
@@ -46,4 +49,24 @@ public interface PmsBrandMapper {
      * @return update count
      */
     int updateByPrimaryKey(PmsBrand record);
+
+    /**
+     * 批量修改显示状态
+     * @param showStatus
+     * @param ids
+     * @return
+     */
+    int updateShowStatus_bacth(Integer showStatus,@Param("ids") List<Long> ids);
+
+
+    /**
+     * 修改是否是 品牌商制造商
+     * @param FactoryStatus
+     * @param ids
+     * @return
+     */
+    int updateFactoryStatus_bacth(Integer FactoryStatus,@Param("ids") List<Long> ids);
+
+
+    List<PmsBrand>findByCondition(PmsBrand pmsBrand);
 }

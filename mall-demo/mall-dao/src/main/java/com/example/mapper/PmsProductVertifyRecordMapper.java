@@ -2,6 +2,9 @@ package com.example.mapper;
 
 import com.example.model.PmsProductVertifyRecord;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 @Mapper
 public interface PmsProductVertifyRecordMapper {
@@ -46,4 +49,8 @@ public interface PmsProductVertifyRecordMapper {
      * @return update count
      */
     int updateByPrimaryKey(PmsProductVertifyRecord record);
+
+
+    //批量修改
+    int insert_batch(@Param("list")List list);
 }

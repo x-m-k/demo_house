@@ -104,4 +104,15 @@
       detail = #{detail,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
+
+  <insert id="insert_batch">
+    insert into pms_product_vertify_record (product_id, create_time, vertify_man,status, detail) values
+    <foreach collection="list" separator="," index="index" item="item">
+      (#{item.productId,jdbcType=BIGINT},
+       #{item.createTime,jdbcType=TIMESTAMP},
+       #{item.vertifyMan,jdbcType=VARCHAR},
+       #{item.status,jdbcType=INTEGER},
+       #{item.detail,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
 </mapper>

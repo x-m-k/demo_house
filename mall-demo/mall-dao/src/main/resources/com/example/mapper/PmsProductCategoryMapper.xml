@@ -22,6 +22,7 @@
     id, parent_id, `name`, `level`, product_count, product_unit, nav_status, show_status, 
     sort, icon, keywords, description
   </sql>
+
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     <!--@mbg.generated-->
     select 
@@ -29,11 +30,57 @@
     from pms_product_category
     where id = #{id,jdbcType=BIGINT}
   </select>
+
+  <select id="findByCondition" resultMap="BaseResultMap">
+      select
+      <include refid="Base_Column_List"/>
+      from pms_product_category
+      where 1=1
+    <if test="id!= null">
+      AND id = #{id,jdbcType=BIGINT},
+    </if>
+      <if test="parentId != null">
+          AND parent_id = #{parentId,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+          AND `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="level != null">
+          AND `level` = #{level,jdbcType=INTEGER},
+      </if>
+      <if test="productCount != null">
+          AND product_count = #{productCount,jdbcType=INTEGER},
+      </if>
+      <if test="productUnit != null">
+          AND product_unit = #{productUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="navStatus != null">
+          AND nav_status = #{navStatus,jdbcType=INTEGER},
+      </if>
+      <if test="showStatus != null">
+          AND show_status = #{showStatus,jdbcType=INTEGER},
+      </if>
+      <if test="sort != null">
+          AND sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="icon != null">
+          AND icon = #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="keywords != null">
+          AND keywords = #{keywords,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+          AND description = #{description,jdbcType=LONGVARCHAR},
+      </if>
+
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     <!--@mbg.generated-->
     delete from pms_product_category
     where id = #{id,jdbcType=BIGINT}
   </delete>
+
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.example.model.PmsProductCategory" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into pms_product_category (parent_id, `name`, `level`, 
@@ -45,6 +92,7 @@
       #{showStatus,jdbcType=INTEGER}, #{sort,jdbcType=INTEGER}, #{icon,jdbcType=VARCHAR}, 
       #{keywords,jdbcType=VARCHAR}, #{description,jdbcType=LONGVARCHAR})
   </insert>
+
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.example.model.PmsProductCategory" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into pms_product_category
@@ -119,6 +167,7 @@
       </if>
     </trim>
   </insert>
+
   <update id="updateByPrimaryKeySelective" parameterType="com.example.model.PmsProductCategory">
     <!--@mbg.generated-->
     update pms_product_category
@@ -159,6 +208,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
+
   <update id="updateByPrimaryKey" parameterType="com.example.model.PmsProductCategory">
     <!--@mbg.generated-->
     update pms_product_category
