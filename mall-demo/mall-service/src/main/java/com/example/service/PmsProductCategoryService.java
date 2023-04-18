@@ -1,0 +1,58 @@
+package com.example.service;
+
+import com.example.model.PmsProductCategory;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.github.pagehelper.PageInfo;
+
+public interface PmsProductCategoryService {
+    /**
+     * delete by primary key
+     *
+     * @param id primaryKey
+     * @return deleteCount
+     */
+    int deleteByPrimaryKey(Long id);
+
+    /**
+     * insert record to table
+     *
+     * @param record the record
+     * @return insert count
+     */
+    int insert(PmsProductCategory record);
+
+    /**
+     * insert record to table selective
+     *
+     * @param record the record
+     * @return insert count
+     */
+    int insertSelective(PmsProductCategory record);
+
+    /**
+     * select by primary key
+     *
+     * @param id primary key
+     * @return object by primary key
+     */
+    PmsProductCategory selectByPrimaryKey(Long id);
+
+    /**
+     * update record selective
+     *
+     * @param record the updated record
+     * @return update count
+     */
+    int updateByPrimaryKeySelective(PmsProductCategory record);
+
+    /**
+     * update record
+     *
+     * @param record the updated record
+     * @return update count
+     */
+    int updateByPrimaryKey(PmsProductCategory record);
+
+   PageInfo<PmsProductCategory> findByCondition(PmsProductCategory pmsProductCategory, Integer PageNum, Integer PageSize) throws JsonProcessingException;
+
+}
